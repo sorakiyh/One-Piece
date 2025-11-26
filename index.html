@@ -4,100 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki Strawhats</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 0;
+            background-color: #ffe08a;
         }
 
+        /* HEADER */
         .header {
-            background-color: #ff4d4d;
+            background-color: #c40000;
+            padding: 35px 0 15px 0;
             color: white;
             text-align: center;
-            padding: 10px 0;
         }
 
         .header h1 {
+            font-size: 48px;
             margin: 0;
-            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 4px;
         }
 
+        /* NAVIGATION */
         .nav {
-            background-color: #ff4d4d;
-            color: white;
-            text-align: center;
-            padding: 5px 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 70px;
+            background-color: #c40000;
+            padding-bottom: 20px;
         }
 
         .nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 18px;
         }
 
-        .content {
-            padding: 20px;
-            background-color: #ffffff;
+        /* CONTENT */
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 30px;
         }
 
-        .yellow-box {
-            background-color: #ffff99;
-            padding: 15px;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            position: relative;
+        .section-box {
+            background-color: #ffe79c;
+            border: 6px solid black;
+            padding: 25px;
+            margin-bottom: 55px;
         }
 
-        .yellow-box h2 {
-            margin-top: 0;
+        .section-title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
 
-        .image-container {
-            position: absolute;
-            top: 15px;
-            right: 15px;
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .bottom-left-image {
-            float: left;
-            margin-right: 20px;
+        .row img, .oda-section img {
+            width: 240px;
+            cursor: zoom-in;
+            border: 3px solid black;
         }
 
-        .bottom-right-box {
-            background-color: #ffff99;
-            padding: 15px;
-            border: 1px solid black;
-            overflow: hidden;
+        .oda-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        .oda-section img {
+            width: 240px;
+        }
+
+        /* IMAGE ZOOM MODAL */
+        #zoomModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #zoomModal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 4px solid white;
+        }
+
+        #zoomModal:active {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- HEADER -->
     <div class="header">
         <h1>WIKI STRAWHATS</h1>
     </div>
+
+    <!-- NAVIGATION -->
     <div class="nav">
         <a href="#">INTRODUCTION</a>
         <a href="#">GET TO KNOW</a>
         <a href="#">ARCS</a>
     </div>
-    <div class="content">
-        <div class="yellow-box">
-            <h2>WHAT IS ONE PIECE ALL ABOUT?</h2>
-            <p>One Piece is a Japanese manga series written and illustrated by Eiichiro Oda. It follows the adventures of Monkey D. Luffy and his crew, the Straw Hat Pirates, as he explores the Grand Line in search of the mythical treasure known as the "One Piece" to become the next King of the Pirates.</p>
-            <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/One_Piece%2C_Volume_1.jpg/250px-One_Piece%2C_Volume_1.jpg" alt="One Piece Cover" width="150">
+
+    <div class="container">
+
+        <!-- ONE PIECE SECTION -->
+        <div class="section-box">
+            <div class="row">
+                <div style="width: 65%;">
+                    <h2 class="section-title">WHAT IS ONE PIECE ALL ABOUT?</h2>
+                    <p>
+                        One Piece is a Japanese manga series written and illustrated by Eiichiro Oda.
+                        It follows the adventures of Monkey D. Luffy and his crew, the Straw Hat Pirates,
+                        as he explores the Grand Line in search of the mythical treasure known as the
+                        "One Piece" to become the next King of the Pirates.
+                    </p>
+                </div>
+
+                <img src="onepiece-cover.jpg" alt="One Piece Cover" class="zoomable">
             </div>
         </div>
-        <img class="bottom-left-image" src="https://static.wikia.nocookie.net/onepiece/images/3/32/Eiichiro_Oda_Infobox.png/revision/latest?cb=20151007150928" alt="Eiichiro Oda" width="150">
-        <div class="bottom-right-box">
-            <h2>EIICHIRO ODA</h2>
-            <p>is a Japanese manga artist and the creator of the series One Piece, the best-selling manga in history and the best-selling comic series printed in tankōbon copies of One Piece in circulation worldwide, Oda is one of the best-selling fiction authors. The series popularity resulted in Oda being named one of the artists who changed the history of manga.</p>
+
+        <!-- EIICHIRO ODA SECTION -->
+        <div class="section-box">
+            <div class="oda-section">
+                <img src="oda-photo.jpg" alt="Eiichiro Oda" class="zoomable">
+
+                <div style="width: 65%;">
+                    <h2 class="section-title">
+                        EIICHIRO ODA <br>
+                        <span style="font-size:15px;">(尾田 栄一郎)</span>
+                    </h2>
+
+                    <p>
+                        is a Japanese manga artist and the creator of the series One Piece, the best-selling
+                        manga in history and the best-selling comic series printed in volume. With more than
+                        520 million tankōbon copies of One Piece in circulation worldwide, Oda is one of the
+                        best-selling fiction authors. The series popularity resulted in Oda being named one
+                        of the artists who changed the history of manga.
+                    </p>
+                </div>
+            </div>
         </div>
+
     </div>
+
+    <!-- ZOOM MODAL -->
+    <div id="zoomModal">
+        <img id="zoomImg">
+    </div>
+
+    <script>
+        // IMAGE ZOOM SCRIPT
+        const zoomModal = document.getElementById("zoomModal");
+        const zoomImg = document.getElementById("zoomImg");
+        const zoomableImages = document.querySelectorAll(".zoomable");
+
+        zoomableImages.forEach(img => {
+            img.addEventListener("click", () => {
+                zoomImg.src = img.src;
+                zoomModal.style.display = "flex";
+            });
+        });
+
+        // CLOSE ON CLICK ANYWHERE
+        zoomModal.addEventListener("click", () => {
+            zoomModal.style.display = "none";
+        });
+    </script>
+
 </body>
 </html>
-  
+
